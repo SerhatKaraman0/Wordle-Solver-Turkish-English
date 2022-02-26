@@ -1,4 +1,4 @@
-wordlist = [
+words = [
     "abadi",
     "Abana",
     "abani",
@@ -3328,17 +3328,17 @@ wordlist = [
     "zurna"
 ]
 
-with open('kelime-listesi.txt') as f:
+with open('/Users/user/Desktop/wordletr/words/kelime-listesi.txt') as f:
     for line in f:
         line = line.strip()
         if len(line.split()) > 1:
             continue
         else:
-            if len(line) == 6 and line not in wordlist:
-                wordlist.append(line.lower())
-            elif len(line) != 6 or line != line.lower():
-                if line in wordlist:
-                    wordlist.remove(line)
+            if len(line) == 5 and line not in words:
+                words.append(line.lower())
+            elif len(line) != 5 or line != line.lower():
+                if line in words:
+                    words.remove(line)
 
     for l in f:
         l = l.strip()
@@ -3346,7 +3346,12 @@ with open('kelime-listesi.txt') as f:
         if len(l.split()) > 1:
             continue
         if len(l) != 6 or l != l.lower():
-            if l in wordlist:
-                wordlist.remove(l)
+            if l in words:
+                words.remove(l)
+
+wordl = (map(lambda x: x.lower(),words))
+wordlist = list(wordl)
+
+
 
 

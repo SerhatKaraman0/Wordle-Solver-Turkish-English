@@ -1,7 +1,7 @@
 class Wordle:
     def __init__(self):
         self.wordlist = [] #List we remove elements from
-        with open('wordle_eng.txt') as f:
+        with open('words/wordle_eng.txt') as f:
             for line in f:
                 line.strip()
                 line.lower()
@@ -25,10 +25,11 @@ class Wordle:
         
 
         while counter > 0:
-            word = input('Kelime: ')
-            colors = input('Renk kombinasyonu: ')
+            word = input('Word: ')
+            colors = input('Color Comb: ')
 
-            
+            if colors == 'ggggg':
+                print(f'🎉 Congrats well played did it in {counter - 5} enjoy 🎉')
 
             for i in range(5): #Creating the dictionary
                 if colors[i] == 'g':

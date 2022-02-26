@@ -16,8 +16,12 @@ class Wordle:
         
 
         while counter > 0:
-            word = input('Word: ')
-            colors = input('Color comb: ')
+            word = input('Kelime: ')
+            colors = input('Renk kombinasyonu: ')
+
+            if colors == 'ggggg':
+                print(f'🎉 Tebrikler {counter - 5} denemede buldun 🎉')
+                break
 
             for i in range(5): #Creating the dictionary
                 if colors[i] == 'g':

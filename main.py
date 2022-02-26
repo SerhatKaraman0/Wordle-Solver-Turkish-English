@@ -11,8 +11,8 @@ if language == 'tr':
 if language == 'en':
     wordle_eng.wordle_eng_runner()
     
-else:
-    print('Language not available right now')
+if language not in ['tr','en']:
+    print('Language not available right now..')
 
 
     
