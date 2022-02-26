@@ -20,21 +20,36 @@ class Wordle:
         color_letters['g'] = []
         color_letters['y'] = []
         color_letters['r'] = []
+        seen_words = set()
         
 
         while counter > 0:
-            word = input('Word: ')
-            colors = input('Color comb: ')
+            word = input('Kelime: ')
+            colors = input('Renk kombinasyonu: ')
+
+            
 
             for i in range(5): #Creating the dictionary
                 if colors[i] == 'g':
-                    color_letters['g'].append((i,word[i]))
+                    if word[i] in seen_words:
+                        continue
+                    else:
+                        color_letters['g'].append((i,word[i]))
+                        seen_words.add(word[i])
 
                 if colors[i] == 'y':
-                    color_letters['y'].append((i,word[i]))
+                    if word[i] in seen_words:
+                        continue
+                    else:
+                        color_letters['y'].append((i,word[i]))
+                        seen_words.add(word[i])
 
                 if colors[i] == 'r':
-                    color_letters['r'].append((i,word[i]))
+                    if word[i] in seen_words:
+                        continue
+                    else:
+                        color_letters['r'].append((i,word[i]))
+                        seen_words.add(word[i])
 
             for w in self.word_tuple:
                 for key in color_letters.keys():
@@ -59,7 +74,7 @@ class Wordle:
                                 elif letter not in w and w in self.wordlist:
                                     self.wordlist.remove(w)
                                     break
-
+            
             print(self.wordlist)
 
             counter -= 1 
@@ -90,8 +105,11 @@ class Wordle:
     #         return self.wordlist
 
 
-w = Wordle()
-w.solver()
+def wordle_eng_runner():
+    w = Wordle()
+    w.solver()
+
+
 
         
 

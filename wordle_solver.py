@@ -8,6 +8,7 @@ class Wordle:
     
     def solver(self):
         counter = 6
+        seen_words = set()
         color_letters = {} #to eliminate the letters we used before we will store the letters which we mark them 'green, yellow, red'
         color_letters['g'] = []
         color_letters['y'] = []
@@ -20,13 +21,25 @@ class Wordle:
 
             for i in range(5): #Creating the dictionary
                 if colors[i] == 'g':
-                    color_letters['g'].append((i,word[i]))
+                    if word[i] in seen_words:
+                        continue
+                    else:
+                        color_letters['g'].append((i,word[i]))
+                        seen_words.add(word[i])
 
                 if colors[i] == 'y':
-                    color_letters['y'].append((i,word[i]))
+                    if word[i] in seen_words:
+                        continue
+                    else:
+                        color_letters['y'].append((i,word[i]))
+                        seen_words.add(word[i])
 
                 if colors[i] == 'r':
-                    color_letters['r'].append((i,word[i]))
+                    if word[i] in seen_words:
+                        continue
+                    else:
+                        color_letters['r'].append((i,word[i]))
+                        seen_words.add(word[i])
 
             for w in self.word_tuple:
                 for key in color_letters.keys():
@@ -51,8 +64,11 @@ class Wordle:
                                 elif letter not in w and w in self.wordlist:
                                     self.wordlist.remove(w)
                                     break
-
-            print(self.wordlist)
+            if self.wordlist == []:
+                print('Unfortunately there is no word that meets the criterias..')
+                
+            else:
+                print(self.wordlist)
 
             counter -= 1 
 
@@ -81,9 +97,12 @@ class Wordle:
     #                     break
     #         return self.wordlist
 
+def wordle_tr_runner():
+    w = Wordle()
+    w.solver()
 
-w = Wordle()
-w.solver()
+
+
 
         
 
