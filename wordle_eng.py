@@ -4,6 +4,7 @@ class Wordle:
         with open('wordle_eng.txt') as f:
             for line in f:
                 line.strip()
+                line.lower()
                 actual_line = line.split()
 
                 if len(actual_line) > 1:
@@ -52,6 +53,7 @@ class Wordle:
                         seen_words.add(word[i])
 
             for w in self.word_tuple:
+                w = w.lower()
                 for key in color_letters.keys():
                     if color_letters[key] != []:
                         if key == 'g':

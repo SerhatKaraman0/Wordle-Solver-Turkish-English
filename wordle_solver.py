@@ -42,6 +42,7 @@ class Wordle:
                         seen_words.add(word[i])
 
             for w in self.word_tuple:
+                w = w.lower()
                 for key in color_letters.keys():
                     if color_letters[key] != []:
                         if key == 'g':
@@ -66,7 +67,7 @@ class Wordle:
                                     break
             if self.wordlist == []:
                 print('Unfortunately there is no word that meets the criterias..')
-                
+
             else:
                 print(self.wordlist)
 

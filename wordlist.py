@@ -3328,4 +3328,25 @@ wordlist = [
     "zurna"
 ]
 
-print(wordlist[15])
+with open('kelime-listesi.txt') as f:
+    for line in f:
+        line = line.strip()
+        if len(line.split()) > 1:
+            continue
+        else:
+            if len(line) == 6 and line not in wordlist:
+                wordlist.append(line.lower())
+            elif len(line) != 6 or line != line.lower():
+                if line in wordlist:
+                    wordlist.remove(line)
+
+    for l in f:
+        l = l.strip()
+        l.lower()
+        if len(l.split()) > 1:
+            continue
+        if len(l) != 6 or l != l.lower():
+            if l in wordlist:
+                wordlist.remove(l)
+
+
