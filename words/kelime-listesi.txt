@@ -1,14 +1,10 @@
-abadi
 abajur
 abak
 abakan
 abakıymış
 abaküs
-abala
-abalı
 abandone
 abanges
-abani
 abanma
 abanmak
 abanoz
@@ -25,7 +21,6 @@ abartmalı
 abartmasız
 abasıyanık
 abasız
-abaşo
 abat
 abataj
 abat etmek
@@ -38,17 +33,13 @@ abazaca
 abazan
 abazan kalmak
 abazanlık
-abbağ
-abbak
 abbasi
 abbasoğlu
 abbastanza
-abçar
 abd
 abdal
 abdala malum olur
 abdallık
-abdan
 abdest
 abdestan
 abdestbozan
@@ -67,7 +58,6 @@ abdüktör
 abdülhay
 abdülhey
 abdülleziz
-abece
 abecesayisal
 abecesel
 abece sırası
@@ -78,8 +68,6 @@ abes bulmak
 abesiyet
 abes kaçmak
 abeslik
-abgah
-abgun
 abhazca
 abı
 abıç
@@ -89,8 +77,6 @@ abık
 abıkan
 abıkevser
 abıl
-abınç
-abıru
 abış
 abışka
 abız
@@ -139,9 +125,6 @@ abra
 abrakadabra
 abramak
 abrasion
-abraş
-abril
-abrul
 absorban
 absorbe
 absorbe etmek
@@ -155,7 +138,6 @@ abstre sayı
 absürd
 absürt
 absürt tiyatro
-abşar
 abu
 abuhava
 abuk sabuk
@@ -163,9 +145,7 @@ abuk sabuk konuşmak
 abuk sabukluk
 abuk subuk
 abuk subukluk
-abula
 abula etmek
-abuli
 abullabut
 abullabutluk
 abur cubur
@@ -188,8 +168,6 @@ acayipleşmek
 acayiplik
 acayip olmak
 accelerando
-accık
-ace
 acebe kalmak
 acele
 acele acele
@@ -229,7 +207,7 @@ acenta
 acente
 acentelik
 acep
-aceze
+
 acı
 acı acı
 acı ağaç
@@ -284,9 +262,6 @@ acımasızlık
 acımaz
 acımazlık
 acı meyan
-acımığ
-acımıh
-acımık
 acımsı
 acımtırak
 acımuk
@@ -324,7 +299,6 @@ acıtış
 acıtmak
 acıvermek
 acı vermek
-acıya
 acıyan
 acıyarak
 acı yavşan
@@ -335,7 +309,6 @@ acıyış
 acı yitimi
 acıyonca
 acı yonca
-acibe
 acil
 acilen
 acil kültür
@@ -344,14 +317,9 @@ acil şifalar dilemek
 acil tıp teknisyeni
 acimik
 acin
-acip
-aciyo
 aciz kalmak
 acizler
 acizlik
-aclan
-acu
-acube
 acul
 acun
 acur
@@ -14187,12 +14155,6 @@ cylindroid
 çağa
 çağ açmak
 çağakan
-çağan
-çağanak
-çağanaklı
-çağanoz
-çağanoz gibi
-çağaş
 çağaşım
 çağaşımsal
 çağatay
