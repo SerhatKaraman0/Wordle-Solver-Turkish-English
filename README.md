@@ -7,6 +7,7 @@
 ### 🟩 -> Means letter is in word and correct place. Represent with 'g' (green) 
 ### 🟨 -> Means letter is in the word but wrong place. Represent with 'y' (yellow) 
 ### 🟥 -> Means letter not in the word. Represent with 'r' (red)
+### 'e' word is to represent word not in wordle database for example if word is not available type 'eeeee' to console
 
 # Social-Media
 ### https://www.reddit.com/user/s3rh4tk
