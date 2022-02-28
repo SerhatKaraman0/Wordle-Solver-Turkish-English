@@ -34,6 +34,7 @@ class Wordle:
             if colors == 'eeeee':
                 del self.count_dict[word]
                 counter += 1 
+                itr -= 1
                 print(self.suggestor())
 
             elif colors == 'ggggg':
