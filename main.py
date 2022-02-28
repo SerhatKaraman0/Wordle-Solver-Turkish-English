@@ -1,7 +1,6 @@
 import wordle_solver, wordle_eng
 
-
-if __name__ == '__main__':
+def welcome():
     print('Welcome to wordle solver..')
     print("Wordle Türkçe Çözer'e hoşgeldiniz..")
 
@@ -15,6 +14,11 @@ if __name__ == '__main__':
         
     if language not in ['tr','en']:
         print('Language not available right now..')
+
+
+if __name__ == '__main__':
+    welcome()
+
 
 
 
