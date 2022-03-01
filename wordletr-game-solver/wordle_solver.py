@@ -7,6 +7,7 @@ class Wordle:
         self.wordlist = wordlist #List we remove elements from
         self.word_tuple = tuple(self.wordlist) #We wouldn't wanna remove elements from the list we iterate 
         self.count_dict = word_score_tr()
+        self.word_colors = []
     
     def suggestor(self):
         min_ = [float('inf'),' ']
@@ -17,7 +18,27 @@ class Wordle:
                 
         return f'Önerilen kelime: {min_[1]}'
     
-    
+    def wordle_emoji(self):
+        emoji_dict = {
+            'g': "🟩",
+            'y': "🟨",
+            'r': "🟥"
+        }
+        emojis = ''
+
+        itr = 1
+        for color in self.word_colors:
+            for single in color:
+                if itr == 6:
+                    emojis += '\n'
+                    itr = 1 
+                emojis += emoji_dict[single]
+                itr += 1 
+
+        return emojis
+            
+
+
     def solver(self):
         counter = 6
         seen_words = set()
@@ -26,23 +47,32 @@ class Wordle:
         color_letters['y'] = []
         color_letters['r'] = []
         
+        
         itr = 1 
         
 
         while counter > 0:
-            
+            if counter == 0:
+                self.word_colors.clear()
+
             print(self.suggestor())
+
             word = input('Kelime: ')
             colors = input('Renk kombinasyonu: ')
+
+            self.word_colors.append(colors)
 
             if colors == 'eeeee':
                 del self.count_dict[word]
                 counter += 1 
                 itr -= 1 
+                self.word_colors.pop()
                 print(self.suggestor())
 
             elif colors == 'ggggg':
                 print(f'🎉 Tebrikler {itr} denemede buldun 🎉')
+                print(self.wordle_emoji())
+                self.word_colors.clear() 
                 break
             
             for i in range(5): #Creating the dictionary

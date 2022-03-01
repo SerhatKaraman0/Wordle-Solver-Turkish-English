@@ -5,6 +5,7 @@ class Wordle:
         self.wordlist = wordlist_eng #List we remove elements from
         self.word_tuple = tuple(self.wordlist) #We wouldn't wanna remove elements from the list we iterate 
         self.count_dict = word_score_en()
+        self.word_colors = []
 
     def suggestor(self):
         min_ = [float('inf'),' ']
@@ -14,6 +15,25 @@ class Wordle:
                 min_[1] = wrd
             
         return f'Suggested word: {min_[1]}'
+
+    def wordle_emoji(self):
+        emoji_dict = {
+            'g': "🟩",
+            'y': "🟨",
+            'r': "🟥"
+        }
+        emojis = ''
+
+        itr = 1
+        for color in self.word_colors:
+            for single in color:
+                if itr == 6:
+                    emojis += '\n'
+                    itr = 1 
+                emojis += emoji_dict[single]
+                itr += 1 
+
+        return emojis
 
     def solver(self):
         counter = 5
@@ -26,7 +46,9 @@ class Wordle:
         itr = 1 
 
         while counter > 0:
-            
+            if counter == 0:
+                self.word_colors.clear()
+
             print(self.suggestor())
             word = input('Word: ')
             colors = input('Color Comb: ')
@@ -35,10 +57,13 @@ class Wordle:
                 del self.count_dict[word]
                 counter += 1 
                 itr -= 1
+                self.word_colors.pop()
                 print(self.suggestor())
 
             elif colors == 'ggggg':
                 print(f'🎉 Congrats well played did it in {itr} enjoy 🎉')
+                print(self.wordle_emoji())
+                self.word_colors.clear() 
                 break
 
             
