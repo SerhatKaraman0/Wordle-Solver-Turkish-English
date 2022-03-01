@@ -1,8 +1,10 @@
-
+from pathlib import Path
 wordlist_eng = []
 
+path = str(Path.cwd()) + '/words/wordle_eng.txt'
 
-with open('words/wordle_eng.txt') as f:
+
+with open(path) as f:
             for line in f:
                 line.strip()
                 line.lower()

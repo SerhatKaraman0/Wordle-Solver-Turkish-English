@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 words = [
     "abadi",
     "Abana",
@@ -3328,7 +3330,8 @@ words = [
     "zurna"
 ]
 
-with open('/Users/user/Desktop/wordletr/words/kelime-listesi.txt') as f:
+path = str(Path.cwd()) + "/words/kelime-listesi.txt"
+with open(path) as f:
     for line in f:
         line = line.strip()
         if len(line.split()) > 1:
