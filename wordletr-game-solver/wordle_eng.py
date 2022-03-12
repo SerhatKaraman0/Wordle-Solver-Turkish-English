@@ -1,21 +1,22 @@
 from wordlist_eng import wordlist_eng
 from pro_guesser import word_score_en
+
 class Wordle:
     def __init__(self):
         self.wordlist = wordlist_eng #List we remove elements from
         self.word_tuple = tuple(self.wordlist) #We wouldn't wanna remove elements from the list we iterate 
         self.count_dict = word_score_en()
         self.word_colors = []
-
+    
     def suggestor(self):
         min_ = [float('inf'),' ']
         for wrd in self.count_dict.keys():
-            if self.count_dict[wrd] < min_[0]:
-                min_[0] = self.count_dict[wrd]
-                min_[1] = wrd
-            
-        return f'Suggested word: {min_[1]}'
-
+                if self.count_dict[wrd] < min_[0]:
+                    min_[0] = self.count_dict[wrd]
+                    min_[1] = wrd
+                
+        return f'Suggested Word: {min_[1]}'
+    
     def wordle_emoji(self):
         emoji_dict = {
             'g': "🟩",
@@ -34,41 +35,45 @@ class Wordle:
                 itr += 1 
 
         return emojis
+            
+
 
     def solver(self):
-        counter = 5
+        counter = 6
+        seen_words = set()
         color_letters = {} #to eliminate the letters we used before we will store the letters which we mark them 'green, yellow, red'
         color_letters['g'] = []
         color_letters['y'] = []
         color_letters['r'] = []
-        seen_words = set()
+        
         
         itr = 1 
+        
 
         while counter > 0:
             if counter == 0:
                 self.word_colors.clear()
 
             print(self.suggestor())
+
             word = input('Word: ')
-            colors = input('Color Comb: ')
+            colors = input('Colors: ')
+
+            self.word_colors.append(colors)
 
             if colors == 'eeeee':
                 del self.count_dict[word]
                 counter += 1 
-                itr -= 1
+                itr -= 1 
                 self.word_colors.pop()
                 print(self.suggestor())
 
             elif colors == 'ggggg':
-                print(f'🎉 Congrats well played did it in {itr} enjoy 🎉')
+                print(f'🎉 Congrats found it on {itr} 🎉')
                 print(self.wordle_emoji())
                 self.word_colors.clear() 
                 break
-
             
-            
-
             for i in range(5): #Creating the dictionary
                 if colors[i] == 'g':
                     if word[i] in seen_words:
@@ -76,7 +81,6 @@ class Wordle:
                     else:
                         color_letters['g'].append((i,word[i]))
                         seen_words.add(word[i])
-                        
 
                 if colors[i] == 'y':
                     if word[i] in seen_words:
@@ -112,17 +116,21 @@ class Wordle:
                         
                         if key == 'y':
                             for index, letter in color_letters['y']:
-                                if w[index] == letter and w in self.wordlist:
+                                if w[index] == letter and w in self.wordlist and w in self.count_dict.keys():
                                     self.wordlist.remove(w)
+                                    del self.count_dict[w]
                                     break
                                 elif letter not in w and w in self.wordlist and w in self.count_dict.keys():
                                     self.wordlist.remove(w)
                                     del self.count_dict[w]
                                     break
-            
-            print(self.wordlist)
 
-            itr += 1
+            if self.wordlist == []:
+                print('Unfortunately there is no word that meets the criterias..')
+
+            
+
+            itr += 1 
             counter -= 1 
 
     
@@ -150,10 +158,10 @@ class Wordle:
     #                     break
     #         return self.wordlist
 
-
 def wordle_eng_runner():
     w = Wordle()
     w.solver()
+
 
 
 
