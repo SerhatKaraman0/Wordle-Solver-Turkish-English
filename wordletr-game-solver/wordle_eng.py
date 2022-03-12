@@ -127,6 +127,7 @@ class Wordle:
 
             if self.wordlist == []:
                 print('Unfortunately there is no word that meets the criterias..')
+                break
 
             
 
