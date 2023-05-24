@@ -13,5 +13,5 @@
 <img src="https://user-images.githubusercontent.com/90270116/156395368-4810df50-ccda-4e59-a370-672c30e04c6c.png"></img>
 # Social-Media
 ### https://www.reddit.com/user/s3rh4tk
-### https://www.instagram.com/kernel___error/
+### https://www.instagram.com/serhat___krmn/
 
